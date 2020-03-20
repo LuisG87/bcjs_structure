@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+            #nav_principal{
+                width:100%;
+                height: 20px;
+                position: fixed;
+            }
+            #xslider div{
+                width:200px;
+                height:200px;
+            }
+
+            .forward,.selected,.unselected,.back{
+                width:40px;
+                height:40px;
+            }
+            .forward{
+                background:url(./img/navs_lider.png) 120 0;
+            }
+            .selected{
+                background:url(./img/navs_lider.png) 80 0;
+            }
+            .unselected{
+                background:url(./img/navs_lider.png) 40 0;
+            }
+            .back{
+                background:url(./img/navs_lider.png) 0 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav id="nav_principal">
+                <h1>Title<h1>
+            </nav>
+            <div id="xslider"></div>
+            <div id="navslider"></div>
+        </header>
+        <main></main>
+        <footer></footer>
+        <script src="fullscreen"></script>
+        <script>
+            jsonX = [
+                {
+                    "title": "titulo1",
+                    "content": "Un contenido unico",
+                    "image": "./img/54278939_2209128762458866_6015512850972278784_n.jpg"
+                }, {
+                    "title": "titulo2",
+                    "content": "Un contenido unico",
+                    "image": "./img/67220502_2423486387862895_3874059796617363456_o.jpg"
+                }, {
+                    "title": "titulo3",
+                    "content": "Un contenido unico",
+                    "image": "./img/75223844_2574603292576903_4686778359047258112_n.jpg"
+                }, {
+                    "title": "titulo4",
+                    "content": "Un contenido unico",
+                    "image": "./img/75472853_3213675355370451_1217893910139895808_n.jpg"
+                }
+
+            ];
+            var s = document.querySelector("#xslider");
+            scontent="";
+            for(slide in jsonX){
+
+                scontent += "<div style=\"background:url('"+jsonX[slide].image+"') no-repeat;background-size: cover;\"><h2>"+jsonX[slide].title+"</h2><p>"+jsonX[slide].content+"</p></div>";
+                
+            }
+            s.innerHTML = scontent;
+            
+            for(i=0;i<jsonX.length;i++){
+                
+            }
+        </script>
+    </body>
+</html>

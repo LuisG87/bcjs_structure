@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    </head>
+<body>
+<main>
+<!--Main contenet start here-->
+                <h1 class="p-title">ewfwefewf</h1>
+<p>fwefwewef</p>
+
+
+
+<pre class="wp-block-preformatted prettyprinted" style=""></pre>
+
+
+<main>
+<pre class="wp-block-code prettyprinted" style=""><code class=" prettyprinted" style=""><span class="pun"><span class="pun">&lt;?</span></span><span class="pln"><span class="pln">php
+</span></span><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Foo</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">public</span></span><span class="pln"><span class="pln"> $aMemberVar </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'aMemberVar Member Variable'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+    </span></span><span class="kwd"><span class="kwd">public</span></span><span class="pln"><span class="pln"> $aFuncName </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'aMemberFunc'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+
+
+    </span></span><span class="kwd"><span class="kwd">function</span></span><span class="pln"><span class="pln"> aMemberFunc</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">
+        </span></span><span class="kwd"><span class="kwd">print</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'Inside `aMemberFunc()`'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+    </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln">
+
+$foo </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">new</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Foo</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">?&gt;</span></span><span class="pln"><span class="pln"> </span></span></code></pre>
+
+
+
+<p>kopjkp</p>
+
+
+
+<pre class="wp-block-code prettyprinted" style=""><code class=" prettyprinted" style=""><span class="pun"><span class="pun">&lt;?</span></span><span class="pln"><span class="pln">php
+define</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">MY_CONSTANT</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'aMemberVar'</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln">
+</span></span><span class="kwd"><span class="kwd">print</span></span><span class="pln"><span class="pln"> $foo</span></span><span class="pun"><span class="pun">-&gt;{</span></span><span class="pln"><span class="pln">MY_CONSTANT</span></span><span class="pun"><span class="pun">};</span></span><span class="pln"><span class="pln"> </span></span><span class="com"><span class="com">// Prints "aMemberVar Member Variable"</span></span><span class="pln"><span class="pln">
+</span></span><span class="kwd"><span class="kwd">print</span></span><span class="pln"><span class="pln"> $foo</span></span><span class="pun"><span class="pun">-&gt;{</span></span><span class="str"><span class="str">'aMemberVar'</span></span><span class="pun"><span class="pun">};</span></span><span class="pln"><span class="pln"> </span></span><span class="com"><span class="com">// Prints "aMemberVar Member Variable"</span></span><span class="pln"><span class="pln">
+</span></span><span class="pun"><span class="pun">?&gt;</span></span><span class="pln"><span class="pln"> </span></span></code></pre>
+</main>
+<script src="js_structure.js"></script>
+<script>
+    /*x = document.structure("div>div(class:a b)>p");
+    document.body.appendChild(x);*/
+    var codeparts = document.querySelectorAll("pre.prettyprinted");
+    for(code in codeparts){
+    (codeparts[code]).setAttribute("id","code"+code);
+    //(codeparts[code]).setAttribute("onclick","fullscreen(this)");
+    (codeparts[code]).appendChild(bcjs_structure("div(class:fullscreen)>button(id:bcode"+code+")"));
+    document.getElementById('bcode'+code).innerText="show";
+    document.getElementById('bcode'+code).setAttribute("onclick","fullscreen(this)");
+    }
+</script>
+<body>
+</html>
