@@ -4,10 +4,10 @@
 <p>this function helps you to crate an structure of html objects with javascript, lets see a little example of use</p>
   
  <h2>How to use</h2>
- <p>As simple as use another script of javascript just use <strong>js_structure</strong>
+ <p>As simple as use another script of javascript just use <strong>bcjs_structure</strong>
   
   ```
-  <script src="js_structure"></script>
+  <script src="bcjs_structure"></script>
   ```
   now we have the script loaded, so lets use it, you can use it invoking bcjs_structure function that is an object.So if you wonna make an element like this
 ```
