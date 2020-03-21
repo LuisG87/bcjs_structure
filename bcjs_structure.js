@@ -29,7 +29,7 @@ bcjs_structure = function(structure){
    * @param {object element html} tag 
    */
   function addAttributes(str,tag){
-    var atributos = str.substring(str.lastIndexOf("(") + 1, str.lastIndexOf(")"));
+    var atributos = str.substring(str.indexOf("(") + 1, str.lastIndexOf(")"));
     data = [];
     if(atributos.includes(",")){
       atrList = atributos.split(",");
@@ -37,13 +37,13 @@ bcjs_structure = function(structure){
       for(i in atrList){
         atr = atrList[i].split(":");
         data[i] = [atr[0],atr[1]];
-        alert(data[i]);
+        //alert(data[i]);
       }
       
     }else{
       atr = atributos.split(":");
       data[0] =[atr[0],atr[1]];
-      alert(data[0]);
+      //alert(data[0]);
     }
     for(d in data){
       tag.setAttribute(data[d][0],data[d][1]);

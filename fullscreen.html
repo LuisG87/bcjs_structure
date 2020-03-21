@@ -6,12 +6,7 @@
 <body>
 <main>
 <!--Main contenet start here-->
-                <h1 class="p-title">ewfwefewf</h1>
-<p>fwefwewef</p>
-
-
-
-<pre class="wp-block-preformatted prettyprinted" style=""></pre>
+<h1 class="p-title">A fullscreen example with bcjs_structure</h1>
 
 
 <main>
@@ -31,7 +26,7 @@ $foo </span></span><span class="pun"><span class="pun">=</span></span><span clas
 
 
 
-<p>kopjkp</p>
+<p>Title 2</p>
 
 
 
@@ -41,17 +36,48 @@ define</span></span><span class="pun"><span class="pun">(</span></span><span cla
 </span></span><span class="kwd"><span class="kwd">print</span></span><span class="pln"><span class="pln"> $foo</span></span><span class="pun"><span class="pun">-&gt;{</span></span><span class="str"><span class="str">'aMemberVar'</span></span><span class="pun"><span class="pun">};</span></span><span class="pln"><span class="pln"> </span></span><span class="com"><span class="com">// Prints "aMemberVar Member Variable"</span></span><span class="pln"><span class="pln">
 </span></span><span class="pun"><span class="pun">?&gt;</span></span><span class="pln"><span class="pln"> </span></span></code></pre>
 </main>
-<script src="js_structure.js"></script>
+<script src="bcjs_structure.js"></script>
 <script>
+    function fullscreen(e){
+
+        fs = document.createElement("div");
+        wheigh = parseInt(window.outerHeight);
+        wwidth = parseInt(window.outerWidth);
+        fs.setAttribute("style","background-color:white;height:"+(wheigh-20)+"px;width:100%;position:absolute;left:0;top:0;font-size:2em");
+        btn = e.getAttribute("id");
+        selector = btn.substring(1,btn.length);
+        element = document.querySelector("#"+selector).cloneNode(true);
+        fs.setAttribute("id","full"+selector);
+        fs.appendChild(element);
+        fs.firstChild.lastChild.setAttribute("style","text-align:right;left:0px;top:0px;position:fixed;width:100%");
+
+        closeButton = document.createElement("button");
+        closeButton.setAttribute("onClick","closeFullScreen(this)");
+        closeButton.setAttribute("data-value","full"+selector);
+        closeButton.setAttribute("style","margin-right:10px");
+        closeButton.innerText="close";
+
+        fs.firstChild.lastChild.firstChild.remove();
+        fs.firstChild.lastChild.appendChild(closeButton);
+
+
+        document.getElementsByTagName('body')[0].appendChild(fs);
+    };
+
+    function closeFullScreen(e){
+        //e.getAttribute("data-value");
+        document.querySelector("#" + e.getAttribute("data-value")).remove();
+    }
     /*x = document.structure("div>div(class:a b)>p");
     document.body.appendChild(x);*/
     var codeparts = document.querySelectorAll("pre.prettyprinted");
-    for(code in codeparts){
-    (codeparts[code]).setAttribute("id","code"+code);
-    //(codeparts[code]).setAttribute("onclick","fullscreen(this)");
-    (codeparts[code]).appendChild(bcjs_structure("div(class:fullscreen)>button(id:bcode"+code+")"));
-    document.getElementById('bcode'+code).innerText="show";
-    document.getElementById('bcode'+code).setAttribute("onclick","fullscreen(this)");
+    if(codeparts.length>0){
+        for(var j=0; j < codeparts.length; j++){
+            codeparts[j].setAttribute("id","code"+j);
+            codeparts[j].appendChild(bcjs_structure("div(class:fullscreen)>button(id:bcode"+j+",onclick:fullscreen(this))[show]"));
+            alert(j);
+        }
+        //estoy recorriendo un nodelist no un array
     }
 </script>
 <body>
