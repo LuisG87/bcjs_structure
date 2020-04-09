@@ -2,6 +2,14 @@
 <html>
     <head>
     <meta charset="utf-8">
+
+    <style>
+        .closebutton{
+            margin-right:10px;
+            background-color:brown;
+            color:white;
+        }
+    </style>
     </head>
 <body>
 <main>
@@ -51,11 +59,12 @@ define</span></span><span class="pun"><span class="pun">(</span></span><span cla
         fs.appendChild(element);
         fs.firstChild.lastChild.setAttribute("style","text-align:right;left:0px;top:0px;position:fixed;width:100%");
 
-        closeButton = document.createElement("button");
+        /*closeButton = document.createElement("button");
         closeButton.setAttribute("onClick","closeFullScreen(this)");
         closeButton.setAttribute("data-value","full"+selector);
         closeButton.setAttribute("style","margin-right:10px");
-        closeButton.innerText="close";
+        closeButton.innerText="close";*/
+        closeButton = bcjs.structure("button(onClick:closeFullScreen(this),data-value:full"+selector+",class:closebutton)[close]");
 
         fs.firstChild.lastChild.firstChild.remove();
         fs.firstChild.lastChild.appendChild(closeButton);
@@ -74,8 +83,7 @@ define</span></span><span class="pun"><span class="pun">(</span></span><span cla
     if(codeparts.length>0){
         for(var j=0; j < codeparts.length; j++){
             codeparts[j].setAttribute("id","code"+j);
-            codeparts[j].appendChild(bcjs_structure("div(class:fullscreen)>button(id:bcode"+j+",onclick:fullscreen(this))[show]"));
-            alert(j);
+            codeparts[j].appendChild(bcjs.structure("div(class:fullscreen)>button(id:bcode"+j+",onclick:fullscreen(this))[show]"));
         }
         //estoy recorriendo un nodelist no un array
     }

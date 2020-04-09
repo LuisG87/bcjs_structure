@@ -363,7 +363,7 @@
         var i = 0;
         for(; i < sections.length; i++){
             j++;
-            lnode = bcjs_structure("div(class:bclist)["+j+"]");
+            lnode = bcjs.structure("div(class:bclist)["+j+"]");
             sections[i].insertBefore(lnode,sections[i].firstChild);
         }
     };
